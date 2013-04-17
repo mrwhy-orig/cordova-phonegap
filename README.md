@@ -30,8 +30,11 @@ Alternatively, if you'd like to bypass Atmosphere, and install directly from Git
 
 ````
 
-This will add the cordova libraries and some initialization code.  You'll need to put the following in your main Meteor index.js file (or equivalent).
+This will add the cordova libraries and some initialization code.  
 
+------------------------
+### Initialize Phonegap Functionality
+You'll need to put the following in your main Meteor index.js file (or equivalent).
 ````
 app.initialize(window);
 ````
