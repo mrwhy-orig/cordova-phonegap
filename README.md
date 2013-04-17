@@ -39,10 +39,12 @@ app.initialize(window);
 ------------------------
 ### Document Object Model
 
-To confirm that Cordova Phonegap connects to the device hardware, add this template to your app HTML somewhere (navbars are a particularly nice spot, I find):
+To confirm that Cordova Phonegap connects to the device hardware, add this template to your app HTML somewhere:
 ````html
 {{> mobileDeviceStatus}}
 ````
+
+If the colors aren't to your liking, simply override the .listening and .received classes, respectively.
 
 ------------------------
 ### Controllers & Event Binding
