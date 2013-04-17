@@ -119,8 +119,12 @@ Second, create a meteor project using the command line utilities found in /phone
 
 Then, you're going to need to edit the CDVViewController.m file, and point the MeteorIntegration App towards your Meteor installation.  If you have a development and production environment, you may need to compile two separate apps, one for each environment.  (Best practice is to add different icons to each app, so you can tell them apart.)
 
-MeteorIntegration > CordovaLib.xcodeproj > Classes > Cleaver > CDVViewController.m (line: 171 or so)
+MyApp > CordovaLib.xcodeproj > Classes > Cleaver > CDVViewController.m (line: 171 or so)
 ````
 self.wwwFolderName = @"http://192.168.0.123:3000";
 ````
 
+Also, you may want to change the MyApp > config.xml and whitelist your application, as follows:
+````
+<access origin="http://192.168.0.130:3000" />
+````
