@@ -73,8 +73,3 @@ MeteorPhonegapApp > CordovaLib.xcodeproj > Classes > Cleaver > CDVViewController
 ````
 self.wwwFolderName = @"http://192.168.0.123:3000";
 ````
-
-Also, you may want to change the MeteorPhonegapApp > config.xml and whitelist your application, as follows:
-````
-<access origin="http://192.168.0.130:3000" />
-````
