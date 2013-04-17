@@ -39,63 +39,13 @@ app.initialize(window);
 ------------------------
 ### Document Object Model
 
-To confirm that Cordova Phonegap connects to the device hardware, add this HTML snippet to your app somewhere:
+To confirm that Cordova Phonegap connects to the device hardware, add this template to your app HTML somewhere (navbars are a particularly nice spot, I find):
 ````html
-<div id="deviceready" class="blink">
-  <p class="event listening">Connecting to Device</p>
-  <p class="event received">Device is Ready</p>
-</div>
+{{> mobileDeviceStatus}}
 ````
 
 ------------------------
 ### Controllers & Event Binding
-
-
-````
-    // when an app goes into the background
-    document.addEventListener("Pause", function() {
-        Cookie.set('LastPage', Meteor.Router.page());
-    });
-    // when an app drops 'offline'
-    document.addEventListener("offline", function() {
-        if (Meteor.Router.page() != 'offline' && Meteor.Router.page() != 'loading') {
-            Cookie.set('LastPage', Meteor.Router.page());
-            Meteor.Router.to('/offline');
-        }
-    });
-    // when an app comes 'online'
-    document.addEventListener("online", function() {
-        Meteor.resume();
-    });
-    // This is an event that fires when a Cordova application is retrieved from the background.
-    document.addEventListener("resume", function() {
-        // http://docs.meteor.com/#meteor_reconnect
-        // Force an immediate reconnection attempt if the client is not connected to the server.
-        // This method does nothing if the client is already connected.
-        Meteor.reconnect();
-        Meteor.resume();
-    });
-
-    // resume functionality, common (used in offline.js as well)
-    
-    Meteor.resume = function() {
-        if (Meteor.status().status != 'connected') {
-            return false;
-        }
-        if (Meteor.Router.page() != 'offline' && Meteor.Router.page() != 'loading') {
-            return true;
-        }
-        var LastPage = Cookie.get('LastPage');
-        if (_.isString(LastPage) && LastPage.length && LastPage != 'loading') {
-            console.log('resumed to: (LastPage)', '/' + LastPage);
-            Meteor.Router.to('/' + LastPage);
-            return true;
-        }
-        Meteor.Router.to('/');
-        return true;
-    };
-
-````
 
 For more information, take a look at this gist from zeroasterisk for a good example of how to perhaps include routing functionality on pause/reconnection:
 https://gist.github.com/zeroasterisk/5405344
@@ -105,18 +55,26 @@ https://gist.github.com/zeroasterisk/5405344
 
 
 ------------------------
-### iOS App Build
+### iOS App Build Using PhoneGap 2.6.0
 
-First, create a meteor project using the command line utilities found in /phonegap-master/lib/ios/bin:
+First, download yourself a copy of PhoneGap 2.6.0.  This Meteorite package requires a specific version of PhoneGap to work, and if you mix/match versions, you're likely to just waste a lot of time.
+http://phonegap.com/download/#
+
+
+Second, create a meteor project using the command line utilities found in /phonegap-master/lib/ios/bin:
 ````
-./create ~/Documents/Cordova/MyApp org.pentasyllabic.MyApp MyApp
-./update_cordova_subproject ~/Documents/Cordova/MyApp/MyApp.xcodeproj
+./create ~/Documents/Cordova/MeteorPhonegapApp org.pentasyllabic.MeteorPhonegapApp MeteorPhonegapApp
+./update_cordova_subproject ~/Documents/Cordova/MeteorPhonegapApp/MeteorPhonegapApp.xcodeproj
 ````
 
 Then, you're going to need to edit the CDVViewController.m file, and point the MeteorIntegration App towards your Meteor installation.  If you have a development and production environment, you may need to compile two separate apps, one for each environment.  (Best practice is to add different icons to each app, so you can tell them apart.)
 
-MeteorIntegration > CordovaLib.xcodeproj > Classes > Cleaver > CDVViewController.m (line: 171 or so)
+MeteorPhonegapApp > CordovaLib.xcodeproj > Classes > Cleaver > CDVViewController.m (line: 171 or so)
 ````
 self.wwwFolderName = @"http://192.168.0.123:3000";
 ````
 
+Also, you may want to change the MeteorPhonegapApp > config.xml and whitelist your application, as follows:
+````
+<access origin="http://192.168.0.130:3000" />
+````
