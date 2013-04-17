@@ -62,7 +62,8 @@ http://phonegap.com/download/#
 
 
 Second, create a meteor project using the command line utilities found in /phonegap-master/lib/ios/bin:
-````
+
+````sh
 ./create ~/Documents/Cordova/MeteorPhonegapApp org.pentasyllabic.MeteorPhonegapApp MeteorPhonegapApp
 ./update_cordova_subproject ~/Documents/Cordova/MeteorPhonegapApp/MeteorPhonegapApp.xcodeproj
 ````
@@ -70,10 +71,13 @@ Second, create a meteor project using the command line utilities found in /phone
 Then, you're going to need to edit the CDVViewController.m file, and point the MeteorIntegration App towards your Meteor installation.  If you have a development and production environment, you may need to compile two separate apps, one for each environment.  (Best practice is to add different icons to each app, so you can tell them apart.)
 
 MeteorPhonegapApp > CordovaLib.xcodeproj > Classes > Cleaver > CDVViewController.m (line: 171 or so)
-````
+
+````js
 self.wwwFolderName = @"http://192.168.0.123:3000";
 ````
 
 Also, in past versions, there have been issues around whitelisting the application.  Setting the wwwFolderName above shoudl take care of things, but if you have any additional problems, you may want to try changing the MeteorPhonegapApp > config.xml and see if this helps:
 
+````xml
 <access origin="http://192.168.0.130:3000" />
+````
