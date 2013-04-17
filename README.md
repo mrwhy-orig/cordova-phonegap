@@ -105,9 +105,13 @@ https://gist.github.com/zeroasterisk/5405344
 
 
 ------------------------
-### iOS App Build
+### iOS App Build Using PhoneGap 2.6.0
 
-First, create a meteor project using the command line utilities found in /phonegap-master/lib/ios/bin:
+First, download yourself a copy of PhoneGap 2.6.0.  This Meteorite package requires a specific version of PhoneGap to work, and if you mix/match versions, you're likely to just waste a lot of time.
+http://phonegap.com/download/#
+
+
+Second, create a meteor project using the command line utilities found in /phonegap-master/lib/ios/bin:
 ````
 ./create ~/Documents/Cordova/MyApp org.pentasyllabic.MyApp MyApp
 ./update_cordova_subproject ~/Documents/Cordova/MyApp/MyApp.xcodeproj
