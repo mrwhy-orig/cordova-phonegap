@@ -49,6 +49,28 @@ If the colors aren't to your liking, simply override the .listening and .receive
 ------------------------
 ### Controllers & Event Binding
 
+
+Currently, only one reactive Session variable is wired up to PhoneGap hardware events.  You can access it with the following syntax.  As other events are wired up, we'll update with a list of the other Session variables you can listen to.
+
+````js
+  Session.get('deviceready', false);
+  
+  //Session.get('pause');
+  //Session.get('resume');
+  //Session.get('online');
+  //Session.get('offline');
+  //Session.get('backbutton');
+  //Session.get('batterycritical');
+  //Session.get('batterylow');
+  //Session.get('batterystatus');
+  //Session.get('menubutton');
+  //Session.get('searchbutton');
+  //Session.get('startcallbutton');
+  //Session.get('endcallbutton');
+  //Session.get('volumedownbutton');
+  //Session.get('volueupbutton');
+````
+
 For more information, take a look at this gist from zeroasterisk for a good example of how to perhaps include routing functionality on pause/reconnection:
 https://gist.github.com/zeroasterisk/5405344
 
