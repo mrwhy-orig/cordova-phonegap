@@ -22,21 +22,6 @@ app = {
             Meteor.reconnect();
             Meteor.resume();
         });
-        // when an app goes into the background
-        document.addEventListener("Pause", function() {
-            Cookie.set('LastPage', Meteor.Router.page());
-        });
-        // when an app drops 'offline'
-        document.addEventListener("offline", function() {
-            if (Meteor.Router.page() != 'offline' && Meteor.Router.page() != 'loading') {
-                Cookie.set('LastPage', Meteor.Router.page());
-                Meteor.Router.to('/offline');
-            }
-        });
-        // when an app comes 'online'
-        document.addEventListener("online", function() {
-            Meteor.resume();
-        });
     },
     // deviceready Event Handler
     //
