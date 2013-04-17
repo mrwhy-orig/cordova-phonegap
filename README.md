@@ -39,12 +39,9 @@ app.initialize(window);
 ------------------------
 ### Document Object Model
 
-To confirm that Cordova Phonegap connects to the device hardware, add this HTML snippet to your app somewhere:
+To confirm that Cordova Phonegap connects to the device hardware, add this template to your app HTML somewhere (navbars are a particularly nice spot, I find):
 ````html
-<div id="deviceready" class="blink">
-  <p class="event listening">Connecting to Device</p>
-  <p class="event received">Device is Ready</p>
-</div>
+{{> mobileDeviceStatus}}
 ````
 
 ------------------------
