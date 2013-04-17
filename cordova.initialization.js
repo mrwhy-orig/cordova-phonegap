@@ -20,7 +20,7 @@ app = {
             // Force an immediate reconnection attempt if the client is not connected to the server.
             // This method does nothing if the client is already connected.
             Meteor.reconnect();
-            Meteor.resume();
+            //Meteor.resume();
         });
     },
     // deviceready Event Handler
@@ -44,24 +44,3 @@ app = {
 };
 
 
-//-------------------------------------------------------
-// METEOR
-
-
-// resume functionality, common (used in offline.js as well)
-Meteor.resume = function() {
-    if (Meteor.status().status != 'connected') {
-        return false;
-    }
-    if (Meteor.Router.page() != 'offline' && Meteor.Router.page() != 'loading') {
-        return true;
-    }
-    var LastPage = Cookie.get('LastPage');
-    if (_.isString(LastPage) && LastPage.length && LastPage != 'loading') {
-        console.log('resumed to: (LastPage)', '/' + LastPage);
-        Meteor.Router.to('/' + LastPage);
-        return true;
-    }
-    Meteor.Router.to('/');
-    return true;
-};
