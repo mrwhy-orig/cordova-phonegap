@@ -55,9 +55,9 @@ https://gist.github.com/zeroasterisk/5405344
 
 
 ------------------------
-### iOS App Build Using PhoneGap 2.6.0
+### iOS App Build Using PhoneGap 2.4.0
 
-First, download yourself a copy of PhoneGap 2.6.0.  This Meteorite package requires a specific version of PhoneGap to work, and if you mix/match versions, you're likely to just waste a lot of time.
+First, download yourself a copy of PhoneGap 2.4.0.  This Meteorite package requires a specific version of PhoneGap to work, and if you mix/match versions, you're likely to just waste a lot of time.
 http://phonegap.com/download/#
 
 
