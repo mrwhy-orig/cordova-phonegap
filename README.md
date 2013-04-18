@@ -4,6 +4,11 @@ cordova-phonegap
 Meteorite package that provides support for mobile hardware support via Cordova Phonegap.  Note:  this package currently only supports iOS devices (iPhone and iPad).  I've uploaded the libraries necessary for Windows, WebOS, and Android support.  However, as I don't have any of that hardware, I'm currently unable to do debugging and testing for those devices.  So, feel free to fork the project and send pull requests!
 http://phonegap.com/
 
+------------------------
+### Meteorite Package Installation
+
+Thanks to @zeroasterisk and @raix!
+
 
 ------------------------
 ### Meteorite Package Installation
