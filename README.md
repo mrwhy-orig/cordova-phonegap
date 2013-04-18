@@ -5,7 +5,7 @@ Meteorite package that provides support for mobile hardware support via Cordova 
 http://phonegap.com/
 
 ------------------------
-### Meteorite Package Installation
+### Contributors
 
 Thanks to @zeroasterisk and @raix!
 
