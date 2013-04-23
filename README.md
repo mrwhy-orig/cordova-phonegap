@@ -113,3 +113,10 @@ Also, in past versions, there have been issues around whitelisting the applicati
 ````xml
 <access origin="http://192.168.0.130:3000" />
 ````
+
+
+------------------------
+### License
+
+MIT License. Use as you wish, including for commercial purposes.  
+See license.mit.txt for full details.  
