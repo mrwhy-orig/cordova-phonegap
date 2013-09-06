@@ -4,6 +4,10 @@ cordova-phonegap
 Meteorite package that provides support for mobile hardware support via Cordova Phonegap.  Note:  this package currently only supports iOS devices (iPhone and iPad).  I've uploaded the libraries necessary for Windows, WebOS, and Android support.  However, as I don't have any of that hardware, I'm currently unable to do debugging and testing for those devices.  So, feel free to fork the project and send pull requests!
 http://phonegap.com/
 
+
+**CSS MINIFICATION BUG IN PRODUCTION**  
+Please let me know if you run into any problems with CSS when moving apps from develop to production.  There seems to be a bug with uglify.js that causes CSS files to break apps in a Safari UIWebView in production.  If you think you've run into this problem, try using the ``--debug`` flag when deploying to ``*.meteor.com``.  
+
 ------------------------
 ### Contributors
 
