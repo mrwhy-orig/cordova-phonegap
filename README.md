@@ -120,6 +120,13 @@ Also, in past versions, there have been issues around whitelisting the applicati
 
 
 ------------------------
+### OAuth on PhoneGap  
+
+OAuth on PhoneGap is sort of tricky, because it involves some redirects and pop-up windows.  Check out the following link for a discussion if you find yourself implementing user authentication in your Meteor PhoneGap app.  
+
+https://groups.google.com/forum/#!topic/meteor-talk/Vw55ztWGEaA  
+
+------------------------
 ### License
 
 MIT License. Use as you wish, including for commercial purposes.  
