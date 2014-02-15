@@ -3,6 +3,7 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
+    api.use('standard-app-packages','client');
     api.use('templating','client');
 
     api.add_files('cordova.html', 'client');
@@ -10,4 +11,8 @@ Package.on_use(function (api) {
 
     api.add_files('cordova-ios-2.4.0.js', 'client');
     api.add_files('cordova.initialization.js', 'client');
+    
+    if (api.export){
+    api.export('app', 'client');
+  }
 });
